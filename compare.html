@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet"href="assets/css/style.css"> 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    
+    <style>
+    html, body {
+  height: auto;
+}
+h1{margin-top:40px;color:black;background-color:#d4af37;padding:15px;}
+.card{height:auto}
+
+
+
+</style>
+    <title>Compare Page</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+          <img src="assets/L2.png" alt="Oxford Sofas Logo" style="height:50px; width:80px;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>   <li class="nav-item"><a class="nav-link" href="Index.Html#about">About us</a></li>  <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle"href="#portfolio"data-bs-toggle="dropdown">Brands</a> 
+   <div class="dropdown-menu">
+       <a class="dropdown-item"href="product.Html">Luxury Sofas</a>
+      <a class="dropdown-item"href="Product2.Html">Grand Sofa</a>
+    <a class="dropdown-item"href="product3.Html">Chenone Sofa</a>
+     <a class="dropdown-item"href="product4.Html"> Interwood Sofa</a>
+       <a class="dropdown-item"href="product5.Html">Habitt Sofas</a>
+     <a class="dropdown-item"href="product6.Html">Modern Sofa</a>
+     </li>
+             
+                <li class="nav-item"><a class="nav-link" href="compare.html">Comparison</a></li>
+                <li class="nav-item"><a class="nav-link" href="Index.Html#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+  <h1 class="text-center display-3 fs-2 my-3 text-uppercase display-">Compare Your Products</h1>
+        
+  <div class="row">     
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="form-group">
+        <label for="Brand1">Select Brand</label>
+        <select class="form-select" id="Brand1" onchange="selectbrand1()">
+          <option selected disabled>select Brand</option>
+          <option>luxury Sofas</option>
+          <option>Grand sofas</option>
+          <option>Chenone sofas</option>
+          <option>Interwood sofas</option>
+          <option>Habitt sofas</option>
+          <option>Modern sofas</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="item1">Select Item</label>
+        <select class="form-select" id="item1" onchange="Selectitem1()">
+        </select>
+      </div>
+
+      <div class="form-group" id="result1">
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="form-group">
+        <label for="Brand2">Select Brand</label>
+        <select class="form-select" id="Brand2" onchange="selectbrand2()">
+          <option selected disabled>select Brand</option>
+          <option>luxury Sofas</option>
+          <option>Grand sofas</option>
+          <option>Chenone sofas</option>
+          <option>Interwood sofas</option>
+          <option>Habitt sofas</option>
+          <option>Modern sofas</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="item2">Select Item</label>
+        <select class="form-select" id="item2" onchange="Selectitem2()">
+        </select>
+      </div>
+
+      <div class="form-group" id="result2">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+    function getItemsHTML(brand) {
+        switch (brand) {
+            case "luxury Sofas": return `
+                <option selected disabled>select Item</option>
+                <option>sectional sofa</option>
+                <option>livingroom sofa</option>
+                <option>Daybed sofa</option>
+                <option>office sofa</option>`;
+
+            case "Grand sofas": return `
+                <option selected disabled>select Item</option>
+                <option>hotel elite sofa</option>
+                  <option>5 seater sofa</option>
+                <option>wingback sofa</option>
+                <option>loveseat sofa</option>
+              `;
+
+            case "Chenone sofas": return `
+                <option selected disabled>select Item</option>
+                <option>chesterfield sofa</option>
+                <option>Recliner sofa</option>
+                <option>Sleeper sofa</option>
+                <option>loveseat sofa</option>
+                `;
+
+            case "Interwood sofas": return `
+                <option selected disabled>select Item</option>
+                <option>Chaise lounge sofa</option>
+                <option>English rolled arm sofa</option>
+                <option>Diwaan sofa</option>`;
+
+            case "Habitt sofas": return `
+                <option selected disabled>select Item</option>
+                <option>Sectional sofa</option>
+                <option>Midcentury modern sofa</option>
+                <option>Tuxedo sofa</option>`;
+
+            case "Modern sofas": return `
+                <option selected disabled>select Item</option>
+                <option>Wooden frames sofa</option>
+                <option>Fabric sofa</option>
+                <option>Livingroom sofa</option>`;
+
+            default: return '';
+        }
+    }
+    function getCardHTML(item) {
+        switch (item) {
+            case "sectional sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/Royalchsterfield.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Sectional Sofa</h3>
+                <p>A large L-shape or U-shape sofa made of multiple joined sections. Perfect for spacious living rooms and corner spaces.</p>
+                </div></div></div>`;
+
+            case "livingroom sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+              <img src="assets/C2.jpg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Living Room Sofa</h3>
+                <p>A stylish and durable sofa designed for daily use in the main seating area of your home. Available in many designs and sizes.</p>
+                </div></div></div>`;
+
+            case "Daybed sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/Cd.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Daybed Sofa</h3>
+                <p>A dual-purpose sofa that functions as both a seat and a bed. Ideal for guest rooms and small spaces.</p>
+                </div></div></div>`;
+
+            case "office sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/Co.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Office Sofa</h3>
+                <p>A formal and professional sofa designed for offices, reception areas, and waiting rooms. Easy to clean and maintain.</p>
+                </div></div></div>`;
+
+            case "hotel elite sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/S1.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Hotel Elite Sofa</h3>
+                <p>A premium quality sofa crafted for luxury hotels and high-end lounges. Combines elegance, durability, and superior comfort.</p>
+                </div></div></div>`;
+       case "5 seater sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/G2.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">5 Seater Sofa</h3>
+                <p>A large family sofa offering seating for five people. Ideal for big families and spacious living rooms with maximum comfort.</p>
+                </div></div></div>`;
+
+            case "wingback sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/G4.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Wingback Sofa</h3>
+                <p>A classic sofa featuring high back and side wings for head and shoulder support. Adds a regal and timeless look to any room.</p>
+                </div></div></div>`;
+
+            case "loveseat sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/G6.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Loveseat Sofa</h3>
+                <p>A compact two-seater sofa perfect for couples or small spaces. Cozy, stylish, and available in fabric, leather, and velvet.</p>
+                </div></div></div>`;
+
+     
+            case "chesterfield sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/C1.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Chesterfield Sofa</h3>
+                <p>A timeless classic with deep button tufting and rolled arms. Known for its iconic design and luxurious appearance in any setting.</p>
+                </div></div></div>`;
+
+            case "Recliner sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/Cw.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Recliner Sofa</h3>
+                <p>A comfort-focused sofa with adjustable backrest and footrest. Available in manual and electric options for ultimate relaxation.</p>
+                </div></div></div>`;
+
+            case "Sleeper sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/S4.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Sleeper Sofa</h3>
+                <p>A space-saving sofa that converts into a full bed. Great for studio apartments and overnight guests with a hidden foldable mattress.</p>
+                </div></div></div>`;
+
+            case "Modular sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/C2.jpg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Modular Sofa</h3>
+                <p>A flexible sofa made of individual units that can be arranged in any configuration. Perfect for modern homes and open-plan living areas.</p>
+                </div></div></div>`;
+
+            case "Chaise lounge sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/I1.jpg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Chaise Lounge Sofa</h3>
+                <p>An elegant elongated chair that lets you fully stretch your legs. Available with one arm, two arms, or armless for a luxurious lounging experience.</p>
+                </div></div></div>`;
+
+            case "English rolled arm sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/I2.webp" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">English Rolled Arm Sofa</h3>
+                <p>A cozy country-house style sofa with low rounded arms and deep plush cushions. Timeless, warm, and perfect for traditional interiors.</p>
+                </div></div></div>`;
+
+            case "Diwaan sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/I3.jpg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Diwaan Sofa</h3>
+                <p>A traditional backrest-free sofa rooted in Eastern design. Placed against a wall, decorative cushions serve as the back for a cultural and elegant look.</p>
+                </div></div></div>`;
+
+            case "Sectional sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/I4.webp" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Sectional Sofa</h3>
+                <p>A large modular sofa configurable in L or U-shape. Built for spacious rooms and big families with maximum comfort and seating capacity.</p>
+                </div></div></div>`;
+
+            case "Midcentury modern sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/I5.webp" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Mid-Century Modern Sofa</h3>
+                <p>A sleek minimalist sofa with tapered wooden legs inspired by 1950s design. Compact and stylish, ideal for modern and contemporary interiors.</p>
+                </div></div></div>`;
+
+            case "Tuxedo sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/I6.webp" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Tuxedo Sofa</h3>
+                <p>A bold architectural sofa where arms and back stand at equal height. Its sharp, boxy silhouette radiates sophistication and formal elegance.</p>
+                </div></div></div>`;
+
+            case "Wooden frames sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/Cw.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Wooden Frame Sofa</h3>
+                <p>A strong and durable sofa built on a solid wood frame. Covered with premium cushions and fabric, it provides long-lasting support and classic style.</p>
+                </div></div></div>`;
+            case "Fabric sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/M2.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Fabric Sofa</h3>
+                <p>A comfortable and stylish sofa upholstered in high-quality fabric. Breathable, soft, and available in a wide range of colors and textures.</p>
+                </div></div></div>`;
+
+            case "Livingroom sofa": return `
+                <div class="card text-center my-1"><div class="card-body">
+                <img src="assets/S4.jpeg" class="img-fluid">
+                <div class="card-title"><h3 class="text-center">Sleeper Sofa</h3>
+                <p>A smart space-saving sofa that converts into a comfortable bed. Perfect for small homes, studio apartments, and accommodating overnight guests.</p>
+                </div></div></div>`;
+
+            default: return '';
+        }
+    }
+
+  
+    function selectbrand1() {
+        let brand = document.getElementById("Brand1").value;
+        document.getElementById("item1").innerHTML = getItemsHTML(brand);
+        document.getElementById("result1").innerHTML = "";
+    }
+
+    function Selectitem1() {
+        let item = document.getElementById("item1").value;
+        document.getElementById("result1").innerHTML = getCardHTML(item);
+    }
+
+    function selectbrand2() {
+        let brand = document.getElementById("Brand2").value;
+        document.getElementById("item2").innerHTML = getItemsHTML(brand);
+        document.getElementById("result2").innerHTML = "";
+    }
+
+    function Selectitem2() {
+        let item = document.getElementById("item2").value;
+        document.getElementById("result2").innerHTML = getCardHTML(item);
+    }
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
